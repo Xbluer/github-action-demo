@@ -1,0 +1,24 @@
+name: Unit Test
+
+on:
+  push:
+    branches:
+      - feature/*
+      - release/*
+      - develop
+      - master
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - .github/workflows/deploy.yml
+      - doc/**
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: branch
+        run: git branch            
