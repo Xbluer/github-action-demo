@@ -1,0 +1,26 @@
+name: Build Nightly
+
+on:
+#  push:
+#    branches:
+#      - feature/*
+  workflow_run:
+    workflows: ["Unit Test"]
+    branches:
+      - feature/*
+      - release/*
+      - develop
+      - master
+    types:
+      - completed
+
+jobs:
+  docker-image-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: branch
+        run: git branch
