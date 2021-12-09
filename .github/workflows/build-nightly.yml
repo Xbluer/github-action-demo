@@ -1,9 +1,9 @@
 name: Build Nightly
 
 on:
-  push:
-    branches:
-      - feature/*
+#   push:
+#   branches:
+#     - feature/*
   workflow_run:
     workflows: ["Unit Test"]
     branches:
