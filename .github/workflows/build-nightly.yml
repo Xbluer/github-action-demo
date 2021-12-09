@@ -10,7 +10,7 @@ on:
       - feature/*
       - release/*
       - develop
-      - master
+      - main
     types:
       - completed
 
