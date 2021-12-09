@@ -8,9 +8,9 @@ on:
     workflows: ["Unit Test"]
     branches:
       - feature/*
-#      - release/*
-#      - develop
-#      - master
+      - release/*
+      - develop
+      - master
     types:
       - completed
 
