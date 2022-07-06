@@ -35,12 +35,12 @@ jobs:
           echo $RELEASE_VERSION
           echo ${{ steps.vars.outputs.tag }}
 
-    - name: Extract Maven project version
-      run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
-      id: project
+      - name: Extract Maven project version
+        run: echo ::set-output name=version::$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)
+        id: project
 
-    - name: Show extracted Maven project version
-      run: echo ${{ steps.project.outputs.version }}
+      - name: Show extracted Maven project version
+        run: echo ${{ steps.project.outputs.version }}
 
-    - name: branch
-      run: git branch
+      - name: branch
+        run: git branch
